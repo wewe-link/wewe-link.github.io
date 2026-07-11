@@ -366,6 +366,24 @@ a:hover {
     color: var(--text-light);
 }
 
+/* Анимация появления секций при скролле */
+.section {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Первая секция видна сразу (без задержки) */
+#section-0 {
+    opacity: 1;
+    transform: none;
+}
+
 /* Логотип SVG — увеличен */
 .logo {
     display: block;

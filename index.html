@@ -226,6 +226,23 @@
         window.addEventListener('scroll', updateActiveDot);
         window.addEventListener('resize', updateActiveDot);
 
+        // Анимация появления секций при скролле (Intersection Observer)
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.15
+        });
+
+        sections.forEach(section => {
+            if (section.id !== 'section-0') {
+                observer.observe(section);
+            }
+        });
+
         // Инициализация каруселей
         document.querySelectorAll('.carousel').forEach(carousel => {
             const images = JSON.parse(carousel.dataset.images);
