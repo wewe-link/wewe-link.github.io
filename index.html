@@ -10,6 +10,7 @@
     <meta property="og:image" content="images/photo_1.jpg">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="ru_RU">
+    <link rel="preload" href="images/photo_1.jpg" as="image">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -51,7 +52,7 @@
         <section class="section full-image" id="section-1">
             <div class="carousel" data-images='["spectacle_04.jpg","spectacle_01.jpg","spectacle_02.jpg","spectacle_03.jpg","spectacle_05.jpg", "spectacle_06.jpg"]'>
                 <button class="carousel-btn prev" aria-label="Предыдущее фото">‹</button>
-                <img class="carousel-img" src="images/spectacle_04.jpg" alt="Спектакль">
+                <img class="carousel-img" src="images/spectacle_04.jpg" alt="Спектакль" loading="lazy">
                 <button class="carousel-btn next" aria-label="Следующее фото">›</button>
             </div>
         </section>
@@ -92,7 +93,7 @@
         <section class="section full-image" id="section-3">
             <div class="carousel" data-images='["pokaz_1.jpg","pokaz_2.jpg","pokaz_3.jpg","pokaz_4.jpg"]'>
                 <button class="carousel-btn prev" aria-label="Предыдущее фото">‹</button>
-                <img class="carousel-img" src="images/pokaz_1.jpg" alt="Спектакль">
+                <img class="carousel-img" src="images/pokaz_1.jpg" alt="Спектакль" loading="lazy">
                 <button class="carousel-btn next" aria-label="Следующее фото">›</button>
             </div>
         </section>
@@ -167,7 +168,7 @@
                         <p>Проект развивается при поддержке HSE Dance — крупнейшей студенческой танцевальной организации России.</p>
                     </div>
                     <div class="photo-col">
-                        <img src="images/photo_2.jpg" alt="Команда проекта">
+                        <img src="images/photo_2.jpg" alt="Команда проекта" loading="lazy">
                     </div>
                 </div>
 
@@ -206,11 +207,11 @@
         });
 
         // Обновление активной точки при прокрутке
-        window.addEventListener('scroll', () => {
+        function updateActiveDot() {
             let current = 0;
             sections.forEach((section, index) => {
                 const sectionTop = section.offsetTop;
-                if (pageYOffset >= sectionTop - 300) {
+                if (window.scrollY >= sectionTop - 300) {
                     current = index;
                 }
             });
@@ -220,7 +221,10 @@
                     dot.classList.add('active');
                 }
             });
-        });
+        }
+
+        window.addEventListener('scroll', updateActiveDot);
+        window.addEventListener('resize', updateActiveDot);
 
         // Инициализация каруселей
         document.querySelectorAll('.carousel').forEach(carousel => {
@@ -246,6 +250,29 @@
                 currentIndex = (currentIndex + 1) % images.length;
                 updateImage();
             });
+
+            // Touch-свайп для мобильных
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            carousel.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+
+            carousel.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                const diff = touchStartX - touchEndX;
+                if (Math.abs(diff) > 50) { // минимальный порог свайпа — 50px
+                    if (diff > 0) {
+                        // Свайп влево — следующее фото
+                        currentIndex = (currentIndex + 1) % images.length;
+                    } else {
+                        // Свайп вправо — предыдущее фото
+                        currentIndex = (currentIndex - 1 + images.length) % images.length;
+                    }
+                    updateImage();
+                }
+            }, { passive: true });
         });
     </script>
 </body>
