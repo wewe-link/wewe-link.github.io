@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>На ощупь — медиакит проекта</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Навигационные точки -->
+    <div class="nav-dots">
+        <div class="nav-dot active" data-section="0"></div>
+        <div class="nav-dot" data-section="1"></div>
+        <div class="nav-dot" data-section="2"></div>
+        <div class="nav-dot" data-section="3"></div>
+        <div class="nav-dot" data-section="4"></div>
+        <div class="nav-dot" data-section="5"></div>
+        <div class="nav-dot" data-section="6"></div>
+    </div>
+
+    <!-- СЕКЦИЯ 1: ОБЛОЖКА (текст + фото) -->
+    <section class="section" id="section-0">
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.svg" alt="Логотип На ощупь">
+            </div>
+            <div class="row-2">
+                <div class="text-col">
+                    <h1>Проект, который студентам действительно нужен</h1>
+                    <p style="font-size: 1.2rem; color: var(--accent); margin-bottom: 3rem;">«На ощупь» — это пластический спектакль о том, как двигаться, когда пути не видно</p>
+                    <p>Быть студентом — это когда многое впервые. Наш спектакль — это история о студенчестве как о большом переходе. Из одного города в другой. Из детства во взрослую жизнь. Из представлений о себе и мире — в реальность, которая часто оказывается сложнее и интереснее любых ожиданий.</p>
+                    <p>Это постановка в стиле Contemporary, которая говорит на языке танца о том, что порой тяжело сказать вслух. Это история как напоминание, что даже в неуверенности и тревоге мы не одиноки. Можно идти на ощупь — без плана, без гарантий, но с желанием двигаться дальше.</p>
+                    <p>На премьере в ВШЭ люди приходили, смотрели, оставались после спектакля и говорили, что узнали себя на сцене. Это не просто театр — это точка, где студенты чувствуют, что они не одни в своих сомнениях.</p>
+                    <p>Мы готовы привезти это в ваш университет и создать пространство для доверительного, безопасного и комфортного диалога со студентами.</p>
+                </div>
+                <div class="photo-col">
+                    <img src="images/photo_1.jpg" alt="Вертикальное фото проекта">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- СЕКЦИЯ 2: КАРУСЕЛЬ 1 -->
+    <section class="section full-image" id="section-1">
+        <div class="carousel" data-images='["spectacle_04.jpg","spectacle_01.jpg","spectacle_02.jpg","spectacle_03.jpg","spectacle_05.jpg", "spectacle_06.jpg"]'>
+            <button class="carousel-btn prev">‹</button>
+            <img class="carousel-img" src="images/spectacle_04.jpg" alt="Спектакль">
+            <button class="carousel-btn next">›</button>
+        </div>
+    </section>
+
+    <!-- СЕКЦИЯ 3: О ПРОЕКТЕ -->
+    <section class="section" id="section-2">
+        <div class="container">
+            <h2>Что произошло на первом показе</h2>
+            <div class="divider" style="margin: 2rem 0;"></div>
+            <div class="grid-2">
+                <div>
+                    <p>В апреле 2026 года состоялась премьера спектакля на сцене Культурного центра ВШЭ. Пришли 300+ человек из 25+ факультетов. После спектакля люди не уходили — оставались на получасовую дискуссию с командой спектакля и задавали вопросы, делились своим опытом, плакали, смеялись.</p>
+                    <p>Мы провели четыре открытых мастер-класса, встречи с психологами, рефлексивные круги. 70 человек записались на дополнительные события. Люди приходили повторно, потому что это действительно было про них — про их жизнь, их сомнения, их смелость.</p>
+                </div>
+                <div>
+                    <div class="metric">
+                        <div class="metric-number">300+</div>
+                        <div class="metric-label">зрителей</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-number">500+</div>
+                        <div class="metric-label">регистраций</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-number">4</div>
+                        <div class="metric-label">мастер-класса</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-number">13%</div>
+                        <div class="metric-label">иностранных студентов</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- СЕКЦИЯ 4: КАРУСЕЛЬ 2 -->
+    <section class="section full-image" id="section-3">
+        <div class="carousel" data-images='["pokaz_1.jpg","pokaz_2.jpg","pokaz_3.jpg","pokaz_4.jpg"]'>
+            <button class="carousel-btn prev">‹</button>
+            <img class="carousel-img" src="images/pokaz_1.jpg" alt="Спектакль">
+            <button class="carousel-btn next">›</button>
+        </div>
+    </section>
+
+    <!-- СЕКЦИЯ 5: ЧТО ПОЛУЧАЕТ УНИВЕРСИТЕТ -->
+    <section class="section" id="section-4">
+        <div class="container">
+            <h2>Что вы получаете</h2>
+            <div class="divider" style="margin: 2rem 0;"></div>
+            <div class="benefits-grid">
+                <div class="highlight-block">
+                    <h3 style="margin-top: 0;">Опытная команда</h3>
+                    <p style="margin-bottom: 0;">Спектакль полностью готов. Режиссёр, хореографы, исполнители — люди, которые уже делали это и знают, как работать с аудиторией.</p>
+                </div>
+                <div class="highlight-block">
+                    <h3 style="margin-top: 0;">Диалог после спектакля</h3>
+                    <p style="margin-bottom: 0;">Мы остаёмся и говорим со зрителями. На премьере это мероприятие получило очень сильный отклик.</p>
+                </div>
+                <div class="highlight-block">
+                    <h3 style="margin-top: 0;">Студенты приходят</h3>
+                    <p style="margin-bottom: 0;">Эта история про них. Про выбор, неуверенность, адаптацию. На премьере было 300+ человек с разных факультетов. Показатель того, что это работает.</p>
+                </div>
+                <div class="highlight-block">
+                    <h3 style="margin-top: 0;">Минимальные требования</h3>
+                    <p style="margin-bottom: 0;">Сценическая площадка, пара дней на подготовку, базовое техоснащение. Мы не усложняем, мы приносим готовый результат.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- СЕКЦИЯ 6: ТЕХНИЧЕСКОЕ ПРЕДЛОЖЕНИЕ -->
+    <section class="section" id="section-5">
+        <div class="container">
+            <h2>Как это работает</h2>
+            <div class="divider" style="margin: 2rem 0;"></div>
+            <div class="prose">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 3rem;">
+                    <div>
+                        <h3 style="color: var(--accent); font-size: 1rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 400; margin-bottom: 1rem;">Что нам нужно</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="padding: 0.7rem 0; color: var(--text-light);">• Сценическая площадка на 150+ человек</li>
+                            <li style="padding: 0.7rem 0; color: var(--text-light);">• 1-2 дня для репетиций на вашей площадке</li>
+                            <li style="padding: 0.7rem 0; color: var(--text-light);">• Свет, звук, сопровождающая техническая команда</li>
+                            <li style="padding: 0.7rem 0; color: var(--text-light);">• Информационная поддержка - чтобы рассказать об этом вашим студентам</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 style="color: var(--accent); font-size: 1rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 400; margin-bottom: 1rem;">Как выглядит вечер</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="padding: 0.7rem 0; color: var(--text-light);">50 минут спектакля</li>
+                            <li style="padding: 0.7rem 0; color: var(--text-light);">20–30 минут разговора со зрителями</li>
+                            <li style="padding: 0.7rem 0; color: var(--text-light);">+ Опционально: открытый мастер-класс на следующий день</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="lyric" style="margin-top: 4rem; color: var(--accent);">Это проект, который говорит студентам: "Ты не один в том, что сомневаешься". Всё готово. Нам нужна только ваша площадка и студенты, которые готовы услышать эту историю.</div>
+        </div>
+    </section>
+
+    <!-- СЕКЦИЯ 7: КОМАНДА И КОНТАКТЫ (с фото) -->
+    <section class="section" id="section-6">
+        <div class="container">
+            <h2>За проектом стоят люди, которые понимают, о чём говорят</h2>
+            <div class="divider" style="margin: 2rem 0;"></div>
+
+            <!-- Две колонки: текст + фото -->
+            <div class="row-2">
+                <div class="text-col">
+                    <p>Проект реализован студентами НИУ ВШЭ. Люди, которые сами прошли через студенческую адаптацию, выбор, сомнения. В нашей команде студенты самых разных факультетов ВШЭ (инженеры, биологи, математики, дизайнеры, экономисты, лингвисты и многие другие!) и разных возрастов - от первого курса до магистров и выпускников.</p>
+                    <p><strong>Режиссёр и хореограф:</strong> Елизавета Пивоева — физик, который нашел способ говорить с людьми через танец. Артистка театральной компании RADI SVETA, педагог-хореограф в HSE Dance на протяжении 3 лет. Студентка 4 курса бакалавриата "Физика" НИУ ВШЭ.</p>
+                    <p><strong>Хореограф, помощник режиссёра:</strong> Диана Ефимова — психолог, которая понимает невербальный язык эмоций. Артистка творческого объединения "Звон", педагог-хореограф в HSE Dance на протяжении 2 лет. Студентка 4 курса бакалавриата "Психология" НИУ ВШЭ.</p>
+                    <p>Проект развивается при поддержке HSE Dance — крупнейшей студенческой танцевальной организации России.</p>
+                </div>
+                <div class="photo-col">
+                    <img src="images/photo_2.jpg" alt="Команда проекта">
+                </div>
+            </div>
+
+            <!-- Контакты и футер -->
+            <div class="contact-block">
+                <h3>Предложение интересно?</h3>
+                <p>Напишите нам, и мы обсудим детали. Это займет 15 минут, и вы поймете, подходит ли проект для ваших студентов.</p>
+                <p style="margin-top: 1.5rem;"><strong>Режиссёр спектакля: Елизавета Пивоева</strong></p>
+                Email: <a href="mailto:eipivoeva@edu.hse.ru">eipivoeva@edu.hse.ru</a><br>
+                Telegram: <a href="https://t.me/findusbytouch" target="_blank">@findusbytouch</a>
+            </div>
+
+            <div style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1);">
+                <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 1rem;">
+                    💡 Совет: нажмите Ctrl+P (или Cmd+P на Mac), чтобы скачать медиакит как PDF
+                </p>
+                <p style="font-size: 0.95rem; color: var(--text-light);">
+                    © 2026 Проект «На ощупь»<br>
+                    HSE Dance, НИУ ВШЭ<br>
+                    <br>
+                    <em>Культурный проект для студентов, которые ищут себя.</em>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Навигация по точкам
+        const navDots = document.querySelectorAll('.nav-dot');
+        const sections = document.querySelectorAll('.section');
+
+        navDots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                sections[index].scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Обновление активной точки при прокрутке
+        window.addEventListener('scroll', () => {
+            let current = 0;
+            sections.forEach((section, index) => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 300) {
+                    current = index;
+                }
+            });
+            navDots.forEach((dot, index) => {
+                dot.classList.remove('active');
+                if (index === current) {
+                    dot.classList.add('active');
+                }
+            });
+        });
+
+        // Инициализация каруселей
+        document.querySelectorAll('.carousel').forEach(carousel => {
+            const images = JSON.parse(carousel.dataset.images);
+            let currentIndex = 0;
+            const imgElement = carousel.querySelector('.carousel-img');
+            const prevBtn = carousel.querySelector('.prev');
+            const nextBtn = carousel.querySelector('.next');
+
+            const updateImage = () => {
+                imgElement.src = 'images/' + images[currentIndex];
+                imgElement.alt = 'Спектакль ' + (currentIndex + 1);
+            };
+
+            prevBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                currentIndex = (currentIndex - 1 + images.length) % images.length;
+                updateImage();
+            });
+
+            nextBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                currentIndex = (currentIndex + 1) % images.length;
+                updateImage();
+            });
+        });
+    </script>
+</body>
+</html>
