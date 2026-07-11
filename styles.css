@@ -142,7 +142,7 @@ strong {
     transform: translateY(-50%) scale(1.1);
 }
 .carousel-btn.prev {
-    left: 1.5rem;
+    left: 5rem;
 }
 .carousel-btn.next {
     right: 5rem;
