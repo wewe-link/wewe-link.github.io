@@ -4,6 +4,12 @@
     --accent-light: #e8934d;
     --text: #ffffff;
     --text-light: #cccccc;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --accent-bg: rgba(217, 120, 55, 0.08);
+    --carousel-btn-bg: rgba(0, 0, 0, 0.4);
+    --carousel-btn-hover: rgba(0, 0, 0, 0.7);
+    --shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    --divider-gradient: linear-gradient(90deg, transparent, rgba(217, 120, 55, 0.3), transparent);
 }
 
 * {
@@ -103,7 +109,7 @@ strong {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.4);
+    background: var(--carousel-btn-bg);
     color: white;
     border: none;
     font-size: 3rem;
@@ -115,7 +121,7 @@ strong {
     line-height: 1;
 }
 .carousel-btn:hover {
-    background: rgba(0, 0, 0, 0.7);
+    background: var(--carousel-btn-hover);
 }
 .carousel-btn.prev {
     left: 1rem;
@@ -145,7 +151,7 @@ strong {
     width: auto;
     object-fit: contain;
     border-radius: 4px;
-    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    box-shadow: var(--shadow);
 }
 
 .grid-2 {
@@ -212,7 +218,7 @@ strong {
 .contact-block {
     margin-top: 3rem;
     padding: 2rem 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid var(--border-color);
 }
 
 .contact-block h3 {
@@ -251,12 +257,12 @@ a:hover {
 
 .divider {
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(217, 120, 55, 0.3), transparent);
+    background: var(--divider-gradient);
     margin: 4rem 0;
 }
 
 .highlight-block {
-    background: rgba(217, 120, 55, 0.08);
+    background: var(--accent-bg);
     border-left: 3px solid var(--accent);
     padding: 2rem;
     backdrop-filter: blur(10px);
@@ -346,7 +352,7 @@ a:hover {
 .footer-divider {
     margin-top: 4rem;
     padding-top: 2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid var(--border-color);
 }
 
 .footer-hint {
