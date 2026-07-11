@@ -20,6 +20,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -28,6 +29,16 @@ body {
     color: var(--text);
     line-height: 1.6;
     font-size: 16px;
+    min-width: 320px;
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 h1 {
@@ -408,13 +419,17 @@ a:hover {
 }
 
 @media (max-width: 768px) {
+    .container {
+        padding: 0 1rem;
+    }
     .section {
-        padding: 4rem 1.5rem;
+        padding: 4rem 1rem;
         min-height: auto;
     }
     .row-2 {
         flex-direction: column;
-        gap: 1.5rem;
+        align-items: stretch;
+        gap: 1.25rem;
     }
     .row-2 .text-col,
     .row-2 .photo-col {
@@ -424,13 +439,18 @@ a:hover {
     .row-2 .photo-col img {
         max-height: 60vh;
         width: 100%;
+        height: auto;
         object-fit: cover;
     }
     .grid-2 {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 1.5rem;
     }
     .benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+    .grid-2-col {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
@@ -444,24 +464,72 @@ a:hover {
         font-size: 1rem;
     }
     .lyric {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
     }
     .metric-number {
-        font-size: 2.5rem;
+        font-size: 2.25rem;
     }
     .metric {
-        margin-right: 2rem;
+        display: block;
+        margin-right: 0;
     }
     .carousel-btn {
-        font-size: 1.8rem;
-        width: 44px;
-        height: 44px;
+        font-size: 1.6rem;
+        width: 40px;
+        height: 40px;
+    }
+    .carousel-btn.prev {
+        left: 0.75rem;
+    }
+    .carousel-btn.next {
+        right: 0.75rem;
+    }
+    .section.full-image .carousel {
+        height: 70vh;
+    }
+    .highlight-block {
+        padding: 1.25rem;
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 480px) {
+    .container {
+        padding: 0 0.875rem;
+    }
+    .section {
+        padding: 3rem 0.875rem;
+    }
+    h1 {
+        font-size: 1.75rem;
+        margin-bottom: 1rem;
+    }
+    h2 {
+        font-size: 1.35rem;
+        margin-bottom: 1rem;
+    }
+    p {
+        font-size: 0.95rem;
+    }
+    .subtitle {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    .logo {
+        margin-bottom: 2rem;
+    }
     .logo img {
-        max-height: 70px;
+        max-height: 56px;
+    }
+    .section.full-image .carousel {
+        height: 60vh;
+    }
+    .carousel-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 1.4rem;
+    }
+    .footer-divider {
+        margin-top: 2rem;
     }
 }
 
