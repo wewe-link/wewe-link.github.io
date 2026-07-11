@@ -289,6 +289,77 @@ a:hover {
     margin-left: -2px;
 }
 
+/* Inline-стили, вынесенные в классы */
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--accent);
+    margin-bottom: 3rem;
+}
+
+.divider--short {
+    margin: 2rem 0;
+}
+
+.highlight-block h3 {
+    margin-top: 0;
+}
+
+.highlight-block p {
+    margin-bottom: 0;
+}
+
+.list-title {
+    color: var(--accent);
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
+.list {
+    list-style: none;
+    padding: 0;
+}
+
+.list li {
+    padding: 0.7rem 0;
+    color: var(--text-light);
+}
+
+.grid-2-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.lyric--accent {
+    margin-top: 4rem;
+    color: var(--accent);
+}
+
+.mt-1_5 {
+    margin-top: 1.5rem;
+}
+
+.footer-divider {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-hint {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+}
+
+.footer-text {
+    font-size: 0.95rem;
+    color: var(--text-light);
+}
+
 /* Логотип SVG — увеличен */
 .logo {
     display: block;
