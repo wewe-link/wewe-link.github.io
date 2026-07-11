@@ -252,8 +252,12 @@
             const nextBtn = carousel.querySelector('.next');
 
             const updateImage = () => {
-                imgElement.src = 'images/' + images[currentIndex];
-                imgElement.alt = 'Спектакль ' + (currentIndex + 1);
+                imgElement.style.opacity = '0';
+                setTimeout(() => {
+                    imgElement.src = 'images/' + images[currentIndex];
+                    imgElement.alt = 'Спектакль ' + (currentIndex + 1);
+                    imgElement.style.opacity = '1';
+                }, 200);
             };
 
             prevBtn.addEventListener('click', (e) => {

@@ -102,6 +102,7 @@ strong {
     height: 100%;
     object-fit: cover;
     display: block;
+    transition: opacity 0.4s ease;
 }
 
 /* Кнопки карусели */
@@ -112,22 +113,28 @@ strong {
     background: var(--carousel-btn-bg);
     color: white;
     border: none;
-    font-size: 3rem;
-    padding: 1rem 1.5rem;
+    font-size: 2.5rem;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
     z-index: 10;
-    transition: background 0.3s;
-    border-radius: 4px;
+    transition: background 0.3s, transform 0.2s;
+    border-radius: 50%;
     line-height: 1;
+    backdrop-filter: blur(4px);
 }
 .carousel-btn:hover {
     background: var(--carousel-btn-hover);
+    transform: translateY(-50%) scale(1.1);
 }
 .carousel-btn.prev {
-    left: 1rem;
+    left: 1.5rem;
 }
 .carousel-btn.next {
-    right: 1rem;
+    right: 1.5rem;
 }
 
 /* Двухколоночный макет (текст + фото) */
@@ -446,8 +453,9 @@ a:hover {
         margin-right: 2rem;
     }
     .carousel-btn {
-        font-size: 2rem;
-        padding: 0.5rem 1rem;
+        font-size: 1.8rem;
+        width: 44px;
+        height: 44px;
     }
 }
 
@@ -465,14 +473,23 @@ a:hover {
     .section {
         page-break-after: always;
         break-inside: avoid;
+        opacity: 1 !important;
+        transform: none !important;
+        min-height: auto;
+        padding: 2rem;
     }
-    .scroll-indicator {
+    .section.full-image {
         display: none;
+    }
+    .scroll-indicator,
+    .nav-dots,
+    .carousel-btn {
+        display: none !important;
     }
     a {
         border: none;
     }
-    .carousel-btn {
-        display: none;
+    .logo img {
+        max-height: 60px;
     }
 }
