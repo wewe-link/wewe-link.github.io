@@ -1,0 +1,17 @@
+# Markdown files (keep README.md tracked)
+*.md
+!README.md
+!CHANGELOG.md
+
+# Dependencies
+node_modules/
+
+# Logs
+*.log
+
+# Audit artifacts
+audit_script.py
+
+# OS files
+.DS_Store
+Thumbs.db
