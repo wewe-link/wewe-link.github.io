@@ -12,6 +12,7 @@
     <meta property="og:locale" content="ru_RU">
     <link rel="preload" href="images/perfomance_01.jpg" as="image">
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <!-- Навигация по секциям -->
@@ -52,7 +53,8 @@
         <section class="section full-image" id="section-1">
             <div class="carousel" data-images='["perfomance_10.jpg","perfomance_07.jpg","perfomance_08.jpg","perfomance_09.jpg","perfomance_11.jpg", "perfomance_12.jpg"]'>
                 <button class="carousel-btn prev" aria-label="Предыдущее фото">‹</button>
-                <img class="carousel-img" src="images/perfomance_10.jpg" alt="Спектакль" loading="lazy">
+                <img class="carousel-img active" src="images/perfomance_10.jpg" alt="Спектакль" loading="lazy">
+                <img class="carousel-img" alt="Спектакль" loading="lazy">
                 <button class="carousel-btn next" aria-label="Следующее фото">›</button>
             </div>
         </section>
@@ -93,7 +95,8 @@
         <section class="section full-image" id="section-3">
             <div class="carousel" data-images='["perfomance_03.jpg","perfomance_04.jpg","perfomance_05.jpg","perfomance_06.jpg"]'>
                 <button class="carousel-btn prev" aria-label="Предыдущее фото">‹</button>
-                <img class="carousel-img" src="images/perfomance_03.jpg" alt="Спектакль" loading="lazy">
+                <img class="carousel-img active" src="images/perfomance_03.jpg" alt="Спектакль" loading="lazy">
+                <img class="carousel-img" alt="Спектакль" loading="lazy">
                 <button class="carousel-btn next" aria-label="Следующее фото">›</button>
             </div>
         </section>
@@ -194,107 +197,5 @@
             </div>
         </footer>
     </main>
-
-    <script>
-        // Навигация по точкам
-        const navDots = document.querySelectorAll('.nav-dot');
-        const sections = document.querySelectorAll('.section');
-
-        navDots.forEach((dot, index) => {
-            dot.addEventListener('click', () => {
-                sections[index].scrollIntoView({ behavior: 'smooth' });
-            });
-        });
-
-        // Обновление активной точки при прокрутке
-        function updateActiveDot() {
-            let current = 0;
-            sections.forEach((section, index) => {
-                const sectionTop = section.offsetTop;
-                if (window.scrollY >= sectionTop - 300) {
-                    current = index;
-                }
-            });
-            navDots.forEach((dot, index) => {
-                dot.classList.remove('active');
-                if (index === current) {
-                    dot.classList.add('active');
-                }
-            });
-        }
-
-        window.addEventListener('scroll', updateActiveDot);
-        window.addEventListener('resize', updateActiveDot);
-
-        // Анимация появления секций при скролле (Intersection Observer)
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, {
-            threshold: 0.15
-        });
-
-        sections.forEach(section => {
-            if (section.id !== 'section-0') {
-                observer.observe(section);
-            }
-        });
-
-        // Инициализация каруселей
-        document.querySelectorAll('.carousel').forEach(carousel => {
-            const images = JSON.parse(carousel.dataset.images);
-            let currentIndex = 0;
-            const imgElement = carousel.querySelector('.carousel-img');
-            const prevBtn = carousel.querySelector('.prev');
-            const nextBtn = carousel.querySelector('.next');
-
-            const updateImage = () => {
-                imgElement.style.opacity = '0';
-                setTimeout(() => {
-                    imgElement.src = 'images/' + images[currentIndex];
-                    imgElement.alt = 'Спектакль ' + (currentIndex + 1);
-                    imgElement.style.opacity = '1';
-                }, 200);
-            };
-
-            prevBtn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                currentIndex = (currentIndex - 1 + images.length) % images.length;
-                updateImage();
-            });
-
-            nextBtn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                currentIndex = (currentIndex + 1) % images.length;
-                updateImage();
-            });
-
-            // Touch-свайп для мобильных
-            let touchStartX = 0;
-            let touchEndX = 0;
-
-            carousel.addEventListener('touchstart', (e) => {
-                touchStartX = e.changedTouches[0].screenX;
-            }, { passive: true });
-
-            carousel.addEventListener('touchend', (e) => {
-                touchEndX = e.changedTouches[0].screenX;
-                const diff = touchStartX - touchEndX;
-                if (Math.abs(diff) > 50) { // минимальный порог свайпа — 50px
-                    if (diff > 0) {
-                        // Свайп влево — следующее фото
-                        currentIndex = (currentIndex + 1) % images.length;
-                    } else {
-                        // Свайп вправо — предыдущее фото
-                        currentIndex = (currentIndex - 1 + images.length) % images.length;
-                    }
-                    updateImage();
-                }
-            }, { passive: true });
-        });
-    </script>
 </body>
 </html>
