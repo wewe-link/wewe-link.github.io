@@ -204,7 +204,8 @@ strong {
     gap: 2rem;
     margin-top: 2rem;
 }
-.benefits-grid .highlight-block {
+.benefits-grid .highlight-block,
+.benefits-grid .contact-highlight {
     margin: 0;
 }
 
@@ -344,6 +345,10 @@ a:hover {
     margin-bottom: 0;
 }
 
+.contact-highlight {
+    margin: 1.5rem 0;
+}
+
 .list-title {
     color: var(--accent);
     font-size: 1rem;
@@ -383,12 +388,6 @@ a:hover {
     margin-top: 4rem;
     padding-top: 2rem;
     border-top: 1px solid var(--border-color);
-}
-
-.footer-hint {
-    font-size: 0.9rem;
-    color: var(--text-light);
-    margin-bottom: 1rem;
 }
 
 .footer-text {
