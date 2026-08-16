@@ -15,3 +15,6 @@ audit_script.py
 # OS files
 .DS_Store
 Thumbs.db
+
+# Draft
+draft.ipynb
